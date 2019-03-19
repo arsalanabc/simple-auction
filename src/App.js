@@ -10,7 +10,7 @@ class App extends Component {
           <ItemBox />
         </div>
         <div className="activeBids">
-          <ItemBox />
+
         </div>
       </div>
     );
