@@ -1,3 +1,8 @@
+setup the DB 
+run postgres in terminal
+then run the queries.sql file (\i queries.sql)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
