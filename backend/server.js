@@ -1,12 +1,16 @@
+const db = require('./pg_config')
 const express = require('express')
 const app = express()
 const port = 3000
 
+
 app.get('/', (req, res) => res.send('hello world'))
 
-app.get('/auctions', (request, response) => 
-  	response.send('auctions')
-)
+app.get('/items', (req, res) => {db.getItems(req, res)})
+app.get('/item/:itemId', (req, res) => {db.getItems(req, res)})
+app.get('/description/:itemId', (req, res) => {db.getDescriptionById(req, res)})
+app.get('/bidsbyuser/:userId', (req, res) => {db.getBidByUser(req, res)})
+app.get('/bidsbyitem/:itemId', (req, res) => {db.getBidByItem(req, res)})
 
 app.listen(port, () => console.log('example of app listening'))
 

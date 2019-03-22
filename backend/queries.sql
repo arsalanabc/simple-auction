@@ -1,5 +1,5 @@
 CREATE ROLE admin WITH LOGIN PASSWORD 'admin';
-ALTER ROLE admin CREATEDB;
+ALTER ROLE admin WITH Superuser;
 
 DROP DATABASE simpleauction;
 CREATE DATABASE simpleauction;
