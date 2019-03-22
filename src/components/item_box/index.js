@@ -4,23 +4,6 @@ import './index.css'
 
 const ItemBox = () => {
 	
-	const [stoppedTypingTime, setStoppedTypingTime] = useState(null)
-
-	useEffect(() => {
-			if (!stoppedTypingTime) return 
-			const timer = setTimeout( () => {
-		 		alert('validate')
-			}
-			, 2000)
-		return () => {clearTimeout(timer)}
-	}, [stoppedTypingTime])
-
-	
-
-	const updateStoppedTypingTime = () => {
-		setStoppedTypingTime(Date.now)
-	} 
-
 	return (<div className="itembox"> 
 				<div className="item_info">
 					<img src="https://picsum.photos/200/300"/>
