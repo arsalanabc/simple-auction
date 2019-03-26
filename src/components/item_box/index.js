@@ -3,6 +3,23 @@ import './index.css'
 
 
 const ItemBox = () => {
+
+	const [title, setTitle] = useState('');
+
+	const getItems = () => {
+		fetch('http://localhost:3000/items')
+	    .then(response => response.json())
+      	.then(data => {
+      		
+      		setTitle(data[0].name) 
+      		})
+		.catch(err => {throw err})
+		}
+
+	useEffect(
+		 getItems,
+		 []
+		)
 	
 	return (<div className="itembox"> 
 				<div className="item_info">
@@ -15,7 +32,9 @@ const ItemBox = () => {
 
 				<div className="item_description">
 					<div className="item_title">
-						<h2>Broken Time Machine </h2>
+						<h2> 
+							{title} 
+						</h2>
 					</div>
 					<div className="item_list">
 						<ul>
