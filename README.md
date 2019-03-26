@@ -2,6 +2,12 @@ setup the DB
 run postgres in terminal
 then run the queries.sql file (\i queries.sql)
 
+endpoints:
+/items - get list of all items up for bid
+/item/:itemId - get item by id
+/description/:itemId - get description points for itemId
+/bidsbyuser/:userId - get bids by userId
+/bidsbyitem/:itemId - get bids by itemId
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

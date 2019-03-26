@@ -21,6 +21,12 @@ const getItemById = (req, res) => {
 	})
 }
 
+const getUserById = (req, res) => {
+	const userId = parseInt(req.params.userId);
+	pool.query(`SELECT * from users where ID = ${userId}`, 
+		(err, result) => {res.send(result.rows)})
+}
+
 const getDescriptionById = (req, res) => {
 	const id = parseInt(req.params.itemId)
 	pool.query(`SELECT description from descriptions where item_id = ${id}`, 
@@ -56,6 +62,7 @@ const getBidByItem = (req, res) => {
 module.exports = {
 	getItems,
 	getItemById,
+	getUserById,
 	getDescriptionById,
 	getImagesById,
 	getBidByUser,

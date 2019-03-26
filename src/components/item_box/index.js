@@ -1,29 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import './index.css'
+import Description from './description'
 
 
 const ItemBox = () => {
 
 	const [title, setTitle] = useState('');
+	const [items, setItems] = useState('[]');
 
 	const getItems = () => {
 		fetch('http://localhost:3000/items')
 	    .then(response => response.json())
-      	.then(data => {
-      		
-      		setTitle(data[0].name)
-      		setItems(data) 
-      		})
+      	.then(data => data)
 		.catch(err => {throw err})
 		}
 
-	
+	// const getUser = id => {
+	// 	fetch(`http://localhost:3000/user/${id}`)
+	// 	.then(response => response.json())
+	// 	.then(data => data)
+	// 	.catch(err => {throw err})
+	// }
+
+	// const getImages = itemId => {
+	// 	 fetch(`http://localhost:3000/images/${itemId}`)
+	// 	.then(response => response.json())
+	// 	.then(data => data)
+	// 	//.then(image_src => console.log(image_src))
+	// 	.catch(err => {throw err})
+	// }
 
 	useEffect(
-		 getItems,
-		 []
-		)
+			 getItems,
+			 []
+			)
 	
+
 	return (<div className="itembox"> 
 				<div className="item_info">
 					<img src="https://picsum.photos/200/300"/>
@@ -40,16 +52,7 @@ const ItemBox = () => {
 						</h2>
 					</div>
 					<div className="item_list">
-						<ul>
-							<li> This is an item  </li>
-							<li> it has awesome feature </li>
-							<li> dont even think twice about it dawg </li>
-							<li> what are you waiting for </li>
-							<li> just joking this shit is broken </li>
-							<li> i am just being freacking honest with you man </li>
-							<li> what else do you want me to do </li>
-							<li> take it or go </li>
-						</ul>
+					<Description itemId={1} />
 					</div>
 
 				</div>
@@ -58,4 +61,4 @@ const ItemBox = () => {
 
 }
 
-export default ItemBox;
+export default ItemBox
