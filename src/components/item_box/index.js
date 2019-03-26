@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './index.css'
 import Description from './description'
+import HighestBidder from './highestBidder'
 
 
 const ItemBox = () => {
@@ -40,7 +41,7 @@ const ItemBox = () => {
 				<div className="item_info">
 					<img src="https://picsum.photos/200/300"/>
 					<text> £45.00 </text>
-					<text> winner </text>
+					<HighestBidder userId={1} />
 
 					<button> Button </button>
 				</div>
