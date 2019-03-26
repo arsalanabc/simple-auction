@@ -11,10 +11,13 @@ const ItemBox = () => {
 	    .then(response => response.json())
       	.then(data => {
       		
-      		setTitle(data[0].name) 
+      		setTitle(data[0].name)
+      		setItems(data) 
       		})
 		.catch(err => {throw err})
 		}
+
+	
 
 	useEffect(
 		 getItems,
