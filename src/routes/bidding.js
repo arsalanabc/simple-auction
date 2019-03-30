@@ -6,7 +6,7 @@ const Bidding = () => {
 	return (
 		<div className="myBids">
 			<div>
-            	My bids
+            	My Bids
           	</div>
           	<div className="activeBids">
             	Active Bids
