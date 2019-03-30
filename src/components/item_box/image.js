@@ -14,7 +14,7 @@ const Images = (props) => {
 
 	useEffect(getImages, [])
 
-	return (<div>{images.map(image => <img src={image.image_src} />)}</div>)
+	return (<div>{images.map(image => <img key={image.id} src={image.image_src} />)}</div>)
 }
 
 export default Images

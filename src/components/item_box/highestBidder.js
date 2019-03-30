@@ -14,7 +14,7 @@ const HighestBidder = (props) => {
 	useEffect(getUser, [])
 
 	return (<div className="item_list">
-			{user.map(theUser => <text> {theUser.username} </text>)}
+			{user.map(theUser => <div key={theUser.id}> <text> {theUser.username} </text> </div>)}
 			</div>	
 		)
 }

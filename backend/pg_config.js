@@ -29,7 +29,7 @@ const getUserById = (req, res) => {
 
 const getDescriptionById = (req, res) => {
 	const id = parseInt(req.params.itemId)
-	pool.query(`SELECT description from descriptions where item_id = ${id}`, 
+	pool.query(`SELECT * from descriptions where item_id = ${id}`, 
 		(err, result) =>{
 			res.send(result.rows)
 	})
@@ -37,7 +37,7 @@ const getDescriptionById = (req, res) => {
 
 const getImagesById = (req, res) => {
 	const id = parseInt(req.params.itemId)
-	pool.query(`SELECT image_src from images where item_id = ${id}`, 
+	pool.query(`SELECT * from images where item_id = ${id}`, 
 		(err, result) =>{
 			res.send(result.rows)
 	})

@@ -17,7 +17,7 @@ const Description = (props) =>{
 
 	return(
 		<ul>
-		{descriptions.map(point => <li> {point.description}  </li>)}
+		{descriptions.map(point => <div key={point.id+props.itemId}> <li> {point.description}  </li> </div>)}
 		</ul>
 		)
 	

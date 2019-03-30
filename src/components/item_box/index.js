@@ -16,13 +16,6 @@ const ItemBox = () => {
 		.catch(err => {throw err})
 		}
 
-	// const getUser = id => {
-	// 	fetch(`http://localhost:3000/user/${id}`)
-	// 	.then(response => response.json())
-	// 	.then(data => data)
-	// 	.catch(err => {throw err})
-	// }
-
 	useEffect(
 			 getItems,
 			 []
@@ -30,8 +23,8 @@ const ItemBox = () => {
 	
 
 	return (<div>
-				{items.map(item => 
-				<div className='itembox'> 
+				{items.map(item =>
+				<div key={item.id} className='itembox'> 
 						<div className="item_info">
 							<Images itemId={item.id} />
 							<text> £{item.price}.00 </text>
